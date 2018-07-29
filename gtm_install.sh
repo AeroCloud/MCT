@@ -47,7 +47,7 @@ function install_sentinel() {
   cd $CONFIGFOLDER/sentinel
   virtualenv ./venv >/dev/null 2>&1
   ./venv/bin/pip install -r requirements.txt >/dev/null 2>&1
-  echo  "* * * * * cd $CONFIGFOLDER/sentinel && ./venv/bin/python bin/sentinel.py >> $CONFIGFOLDER/sentinel.log 2>&1" > $CONFIGFOLDER/$COIN_NAME.cron
+  echo  "* * * * * cd $CONFIGFOLDER/sentinel && ./venv/bin/python bin/sentinel.py > /dev/null 2>&1" > $CONFIGFOLDER/$COIN_NAME.cron
   crontab $CONFIGFOLDER/$COIN_NAME.cron
   rm $CONFIGFOLDER/$COIN_NAME.cron >/dev/null 2>&1
   echo "dash_conf=$CONFIGFOLDER/gentarium.conf" >> $CONFIGFOLDER/sentinel/sentinel.conf
@@ -150,7 +150,7 @@ function update_config() {
   sed -i 's/daemon=1/daemon=0/' $CONFIGFOLDER/$CONFIG_FILE
   cat << EOF >> $CONFIGFOLDER/$CONFIG_FILE
 logintimestamps=1
-maxconnections=256
+maxconnections=32
 #bind=$NODEIP
 masternode=1
 externalip=$NODEIP:$COIN_PORT
@@ -158,15 +158,14 @@ masternodeprivkey=$COINKEY
 
 #Addnodes
 
-addnode=95.216.62.226
-addnode=95.216.62.230
-addnode=95.216.62.227
-addnode=95.216.59.98
-addnode=23.95.202.88
-addnode=95.179.151.54
-addnode=209.250.244.8
-addnode=104.238.132.59
-addnode=140.82.33.94
+addnode=159.69.38.117:17017
+addnode=95.216.150.152:17017
+addnode=62.109.25.236:17017
+addnode=125.212.244.160:17017
+addnode=95.126.59.101:17017
+addnode=185.231.70.82:17017
+addnode=192.95.33.131:17017
+addnode=79.68.158.105:17017
 
 EOF
 }
