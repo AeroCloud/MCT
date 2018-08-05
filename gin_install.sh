@@ -50,7 +50,7 @@ function install_sentinel() {
   echo  "* * * * * cd $CONFIGFOLDER/sentinel && ./venv/bin/python bin/sentinel.py > /dev/null 2>&1" > $CONFIGFOLDER/$COIN_NAME.cron
   crontab $CONFIGFOLDER/$COIN_NAME.cron
   rm $CONFIGFOLDER/$COIN_NAME.cron >/dev/null 2>&1
-  echo "dash_conf=$CONFIGFOLDER/gentarium.conf" >> $CONFIGFOLDER/sentinel/sentinel.conf
+  echo "dash_conf=$CONFIGFOLDER/gincoin.conf" >> $CONFIGFOLDER/sentinel/sentinel.conf
 }
 
 
@@ -224,7 +224,7 @@ echo -e "Preparing the VPS to setup. ${CYAN}$COIN_NAME${NC} ${RED}Masternode${NC
 apt-get update >/dev/null 2>&1
 DEBIAN_FRONTEND=noninteractive apt-get update > /dev/null 2>&1
 DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" -y -qq upgrade >/dev/null 2>&1
-apt install -y software-properties-common >/dev/null 2>&1
+apt install -y nano software-properties-common >/dev/null 2>&1
 echo -e "${PURPLE}Adding bitcoin PPA repository"
 apt-add-repository -y ppa:bitcoin/bitcoin >/dev/null 2>&1
 echo -e "Installing required packages, it may take some time to finish.${NC}"
