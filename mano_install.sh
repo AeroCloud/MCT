@@ -50,7 +50,7 @@ function install_sentinel() {
   echo  "* * * * * cd $CONFIGFOLDER/sentinel && ./venv/bin/python bin/sentinel.py > /dev/null 2>&1" > $CONFIGFOLDER/$COIN_NAME.cron
   crontab $CONFIGFOLDER/$COIN_NAME.cron
   rm $CONFIGFOLDER/$COIN_NAME.cron >/dev/null 2>&1
-  echo "dash_conf=$CONFIGFOLDER/gentarium.conf" >> $CONFIGFOLDER/sentinel/sentinel.conf
+  echo "dash_conf=$CONFIGFOLDER/mano.conf" >> $CONFIGFOLDER/sentinel/sentinel.conf
 }
 
 
