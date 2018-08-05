@@ -11,8 +11,8 @@ COIN_TGZ='https://github.com/gincoin-dev/gincoin-core/releases/download/1.1.0.0/
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
 SENTINEL_REPO='https://github.com/sparkscrypto/sentinel'
 COIN_NAME='GIN'
-COIN_PORT=18011
-RPC_PORT=18012
+COIN_PORT=10111
+RPC_PORT=10112
 
 NODEIP=$(curl -s4 icanhazip.com)
 
@@ -30,7 +30,7 @@ purgeOldInstallation() {
     #kill wallet daemon
     sudo killall gincoind > /dev/null 2>&1
     #remove old ufw port allow
-    sudo ufw delete allow 18011/tcp > /dev/null 2>&1
+    sudo ufw delete allow 10111/tcp > /dev/null 2>&1
     #remove old files
     if [ -d "~/ge" ]; then
         sudo rm -rf ~/ge > /dev/null 2>&1
