@@ -114,7 +114,7 @@ function create_config() {
   RPCUSER=$(tr -cd '[:alnum:]' < /dev/urandom | fold -w10 | head -n1)
   RPCPASSWORD=$(tr -cd '[:alnum:]' < /dev/urandom | fold -w22 | head -n1)
   cat << EOF > $CONFIGFOLDER/$CONFIG_FILE
-rpcuser=$RPCUSER
+rpcuser=gloriumrpc
 rpcpassword=$RPCPASSWORD
 rpcport=$RPC_PORT
 rpcallowip=127.0.0.1
