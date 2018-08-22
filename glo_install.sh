@@ -2,7 +2,7 @@
 
 TMP_FOLDER=$(mktemp -d)
 TMP_FOLDER=$(mktemp -d)
-CONFIG_FILE='mct.conf'
+CONFIG_FILE='glorium.conf'
 CONFIGFOLDER='/root/.glorium'
 COIN_DAEMON='gloriumd'
 COIN_CLI='glorium-cli'
