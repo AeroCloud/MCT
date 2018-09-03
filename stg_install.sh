@@ -23,7 +23,7 @@ function download_node() {
   echo -e "Prepare to download $COIN_NAME binaries"
   cd $TMP_FOLDER
   wget $COIN_TGZ
-  tar xvzf $COIN_ZIP -C $COIN_PATH >/dev/null 2>&1
+  tar xvzf $COIN_ZIP >/dev/null 2>&1
   compile_error
   cp securetag-1.5.2/bin/$COIN_DAEMON securetag-1.5.2/bin/$COIN_CLI $COIN_PATH
   chmod +x $COIN_PATH$COIN_DAEMON $COIN_PATH$COIN_CLI
