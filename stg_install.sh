@@ -25,6 +25,7 @@ function download_node() {
   wget $COIN_TGZ
   tar xvzf $COIN_ZIP -C $COIN_PATH >/dev/null 2>&1
   compile_error
+  cp securetag-1.5.2/bin/$COIN_DAEMON securetag-1.5.2/bin/$COIN_CLI $COIN_PATH
   chmod +x $COIN_PATH$COIN_DAEMON $COIN_PATH$COIN_CLI
   cd - >/dev/null 2>&1
   rm -r $TMP_FOLDER >/dev/null 2>&1
