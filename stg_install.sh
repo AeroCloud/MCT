@@ -120,7 +120,7 @@ maxconnections=16
 #bind=$NODEIP
 masternode=1
 externalip=$NODEIP:$COIN_PORT
-masternodeaddr=$NODEIP:$COIN_PORT
+#masternodeaddr=$NODEIP:$COIN_PORT
 masternodeprivkey=$COINKEY
 
 #Addnodes
