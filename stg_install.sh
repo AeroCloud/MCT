@@ -6,8 +6,8 @@ CONFIGFOLDER='/root/.securetag'
 COIN_PATH='/usr/local/bin/'
 COIN_DAEMON='securetagd'
 COIN_CLI='securetag-cli'
-COIN_TGZ='http://securetag.io/securetag-1.5.2-linux64.tar.gz'
-COIN_ZIP='securetag-1.5.2-linux64.tar.gz'
+COIN_TGZ='https://github.com/securetag/securetag/releases/download/1.5.3/securetag-1.5.3-linux64.tar.gz'
+COIN_ZIP='securetag-1.5.3-linux64.tar.gz'
 COIN_NAME='SecureTag'
 COIN_PORT=12919
 RPC_PORT=12929
@@ -25,7 +25,7 @@ function download_node() {
   wget $COIN_TGZ
   tar xvzf $COIN_ZIP >/dev/null 2>&1
   compile_error
-  cp securetag-1.5.2/bin/$COIN_DAEMON securetag-1.5.2/bin/$COIN_CLI $COIN_PATH
+  cp securetag-1.5.3/bin/$COIN_DAEMON securetag-1.5.3/bin/$COIN_CLI $COIN_PATH
   chmod +x $COIN_PATH$COIN_DAEMON $COIN_PATH$COIN_CLI
   cd - >/dev/null 2>&1
   rm -r $TMP_FOLDER >/dev/null 2>&1
