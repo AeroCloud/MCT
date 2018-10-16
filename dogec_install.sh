@@ -1,7 +1,7 @@
 #!/bin/bash
 
 TMP_FOLDER=$(mktemp -d)
-CONFIG_FILE='securetag.conf'
+CONFIG_FILE='dogecash.conf'
 CONFIGFOLDER='/root/.dogecash'
 COIN_PATH='/usr/local/bin/'
 COIN_DAEMON='dogecashd'
@@ -23,7 +23,7 @@ function download_node() {
   echo -e "Prepare to download $COIN_NAME binaries"
   cd $TMP_FOLDER
   wget $COIN_TGZ
-  tar xvzf $COIN_ZIP >/dev/null 2>&1
+  unzip $COIN_ZIP >/dev/null 2>&1
   compile_error
   cp dogecash/$COIN_DAEMON dogecash/$COIN_CLI $COIN_PATH
   strip $COIN_PATH$COIN_DAEMON
@@ -78,7 +78,7 @@ EOF
 
 function create_config() {
   mkdir $CONFIGFOLDER >/dev/null 2>&1
-  RPCUSER=$(tr -cd '[:alnum:]' < /dev/urandom | fold -w10 | head -n1)
+  RPCUSER=$(tr -cd '[:alnum:]' < /dev/urandom | fold -w16 | head -n1)
   RPCPASSWORD=$(tr -cd '[:alnum:]' < /dev/urandom | fold -w22 | head -n1)
   cat << EOF > $CONFIGFOLDER/$CONFIG_FILE
 rpcuser=$RPCUSER
@@ -197,7 +197,7 @@ echo -e "Prepare the system to install ${GREEN}$COIN_NAME${NC} masternode."
 apt-get update >/dev/null 2>&1
 DEBIAN_FRONTEND=noninteractive apt-get update > /dev/null 2>&1
 DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" -y -qq upgrade >/dev/null 2>&1
-apt install -y nano software-properties-common >/dev/null 2>&1
+apt install -y nano software-properties-common unzip >/dev/null 2>&1
 echo -e "${GREEN}Adding bitcoin PPA repository"
 apt-add-repository -y ppa:bitcoin/bitcoin >/dev/null 2>&1
 echo -e "Installing required packages, it may take some time to finish.${NC}"
