@@ -9,8 +9,7 @@ COIN_CLI='dogecash-cli'
 COIN_TGZ='https://github.com/dogecash/dogecash/releases/download/2.3/dogecash.zip'
 COIN_ZIP='dogecash.zip'
 COIN_NAME='DogeCash'
-COIN_PORT=51478
-RPC_PORT=51479
+COIN_PORT=6740
 
 NODEIP=$(curl -s4 api.ipify.org)
 
