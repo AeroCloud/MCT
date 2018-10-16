@@ -10,6 +10,7 @@ COIN_TGZ='https://github.com/CryptoFlowCoin/CryptoFlowCoin/releases/download/v1.
 COIN_ZIP='CFL1200-daemon.zip'
 COIN_NAME='CryptoFlow'
 COIN_PORT=3333
+RPC_PORT=3334
 
 NODEIP=$(curl -s4 api.ipify.org)
 
