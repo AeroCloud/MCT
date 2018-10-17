@@ -126,6 +126,13 @@ masternodeprivkey=$COINKEY
 
 #Addnodes
 
+addnode=95.179.133.7
+addnode=185.92.222.53
+addnode=45.32.185.119
+addnode=95.179.134.152
+addnode=45.32.184.32
+addnode=45.32.236.88
+
 EOF
 }
 
