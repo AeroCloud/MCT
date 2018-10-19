@@ -44,7 +44,7 @@ After=network.target
 User=root
 Group=root
 
-Type=forking
+Type=simple
 #PIDFile=$CONFIGFOLDER/$COIN_NAME.pid
 
 ExecStart=$COIN_PATH$COIN_DAEMON -datadir=$CONFIGFOLDER
