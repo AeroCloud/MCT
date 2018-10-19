@@ -46,7 +46,7 @@ Type=forking
 #PIDFile=$CONFIGFOLDER/$COIN_NAME.pid
 
 ExecStart=$COIN_PATH$COIN_DAEMON -daemon -datadir=$CONFIGFOLDER
-ExecStop=-$COIN_PATH$COIN_CLI -datadir=$CONFIGFOLDER stop
+ExecStop=$COIN_PATH$COIN_CLI -datadir=$CONFIGFOLDER stop
 
 Restart=always
 PrivateTmp=true
