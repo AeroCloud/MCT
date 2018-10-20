@@ -151,7 +151,7 @@ function update_config() {
   cat << EOF >> $CONFIGFOLDER/$CONFIG_FILE
 logintimestamps=1
 maxconnections=32
-#bind=$NODEIP
+bind=$NODEIP
 masternode=1
 externalip=$NODEIP:$COIN_PORT
 masternodeprivkey=$COINKEY
@@ -273,7 +273,7 @@ function important_information() {
   create_config
   create_key
   update_config
-  install_sentinel
+  #install_sentinel
   enable_firewall
   important_information
   configure_systemd
