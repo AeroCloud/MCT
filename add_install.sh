@@ -89,6 +89,7 @@ listen=1
 server=1
 daemon=1
 staking=0
+enablezeromint=0
 prune=1000
 port=$COIN_PORT
 debug=0
