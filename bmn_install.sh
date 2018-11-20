@@ -30,9 +30,9 @@ purgeOldInstallation() {
     #kill wallet daemon
     sudo killall bluemnd > /dev/null 2>&1
     #remove old ufw port allow
-    sudo ufw delete allow 9551/tcp > /dev/null 2>&1
+    sudo ufw delete allow 15003/tcp > /dev/null 2>&1
     #remove old files
-    if [ -d "~/.mct" ]; then
+    if [ -d "~/.bluemncore" ]; then
         sudo rm -rf ~/.bluemncore > /dev/null 2>&1
     fi
     #remove binaries and BlueMN utilities
